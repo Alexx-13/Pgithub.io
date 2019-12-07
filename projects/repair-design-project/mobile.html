@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<iframe class="iframe" src="index.html"  border="0"></iframe>
+
+ <div class="buttons-container">
+  <button class="project-button project-size-button">
+    Mobile
+  </button>
+  <button class="project-button">
+    <a href="../../index.html">Back</a>
+  </button>
+</div>  
+    
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  iframe {
+    width: 100%; 
+    height: 11000px;
+    border: 0;
+    margin: 0 auto;
+  }
+  
+  iframe.mobile {
+    width: 1000px; 
+    height: 13000px;
+  }
+   
+  .buttons-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    justify-content: space-between;
+  }
+  
+  .project-button {
+    width: 140px;
+    height: 54px;
+    border: 2px solid red;
+    border-radius: 2px;  
+    background-color: #ffffff;  
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    color: red;
+  }
+  
+  .project-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    color: red;
+    text-decoration: none;
+  }
+  .project-button:focus {
+    outline: 0;
+  }
+  .project-button:active {
+    box-shadow: none;
+  }
+  @media  (max-width: 1000px) {
+    .project-button:nth-child(1) {
+      display: none;
+    }
+    .buttons-container {
+      height: 54px;
+    }
+  }
+</style>
+<script>
+  const iframe = document.querySelector('.iframe');
+  const projectSizeBtn = document.querySelector('.project-size-button');
+
+  projectSizeBtn.addEventListener('click', function() {
+    iframe.classList.toggle('mobile');
+    if(projectSizeBtn.innerHTML === "Desktop"){
+      projectSizeBtn.innerHTML = "Mobile";
+    } else {
+      projectSizeBtn.innerHTML = "Desktop";
+    }
+  });
+</script>
